@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3>Bind it!</h3>
+      <ol>
+        <li>Click StartGame to start the game and Pause Game to pause</li>
+        <li>When starting the game, an event (holding a incrementing number) should get emitted each second (ref = setInterval())</li>
+        <li>When stopping the game, no more events should get emitted (clearInterval(ref))</li>
+      </ol>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-game-control (intervalFired)="onIntervalFired($event)"></app-game-control>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-odd *ngFor="let oddNumber of oddNumbers" [number]="oddNumber"></app-odd>
+      <app-even *ngFor="let evenNumber of evenNumbers" [number]="evenNumber"></app-even>
+    </div>
+  </div>
+</div>
